@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: fortnite-status-bot
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python bot.py"
+    envVars:
+      - key: DISCORD_BOT_TOKEN
+        sync: false
+      - key: STATUS_CHANNEL_ID
+        sync: false
+      - key: PATCH_CHANNEL_ID
+        sync: false
